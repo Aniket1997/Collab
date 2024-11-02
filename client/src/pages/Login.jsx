@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom for navigation
 
 const Login = () => {
   // Sample handle functions for form submission and Google login
@@ -8,7 +9,7 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
-    window.open('http://localhost:5000/auth/google', '_self');
+    window.open('/api/auth/google', '_self');
   };
 
   return (
@@ -71,6 +72,14 @@ const Login = () => {
             <span>Login with Google</span>
           </div>
         </button>
+
+        {/* Already have an account? Register */}
+        <div className="mt-4 text-center">
+          <span className="text-gray-600">Don't have any Account </span>
+          <Link to="/register" className="text-indigo-500 hover:underline">
+            Register
+          </Link>
+        </div>
       </div>
     </div>
   );
